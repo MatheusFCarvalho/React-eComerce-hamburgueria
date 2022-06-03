@@ -1,0 +1,21 @@
+.ContainerStyled {
+  display: flex;
+  overflow: auto;
+
+  margin-left: 10px;
+  gap: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .ContainerStyled {
+    flex-wrap: wrap;
+    min-width: 650px;
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .ContainerStyled {
+      min-width: 1000px;
+      width: 70%;
+    }
+  }
+}
