@@ -8,6 +8,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filterValue, setFilterValue] = useState("");
 
   const propsProd = {
     products,
@@ -15,6 +16,8 @@ function App() {
     setCurrentSale,
     filteredProducts,
     setFilteredProducts,
+    setFilterValue,
+    filterValue,
   };
 
   useEffect(() => {

@@ -55,6 +55,8 @@ export const StyledProductsSaled = styled.div`
   gap: 15px;
 
   h4 {
+    text-align: left;
+
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
@@ -82,6 +84,7 @@ export const StyledProductsSaled = styled.div`
 
   .removeAndQtd {
     p {
+      min-width: 65px;
       margin-top: 4.5px;
 
       font-weight: 500;

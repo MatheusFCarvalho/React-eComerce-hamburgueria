@@ -1,0 +1,31 @@
+.resultSearch {
+  text-align: left;
+
+  margin: 30px 0px 26px 10px;
+
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 34px;
+
+  color: #333333;
+}
+
+.resultSearch span {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 34px;
+
+  color: #828282;
+}
+
+@media screen and (min-width: 1024px) {
+  .resultSearch {
+    margin: 30px 40px 38px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .resultSearch {
+    margin: 0 120px 0 120px;
+  }
+}

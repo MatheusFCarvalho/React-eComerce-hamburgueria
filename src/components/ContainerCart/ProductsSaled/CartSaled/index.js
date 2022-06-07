@@ -1,10 +1,30 @@
+import { useEffect, useState } from "react";
 import { RemoveButtonProd, StyledCartSaled } from "../../style";
 
 function CartSaled({ props, saled }) {
   const { currentSale, setCurrentSale } = props;
 
+  const [saledQtd, setSaledQtd] = useState(1);
+  saled.qtd = saledQtd;
+
+  function addQtd() {
+    setSaledQtd(saledQtd + 1);
+    saled.qtd++;
+    setCurrentSale([...currentSale]);
+  }
+
+  function subQtd() {
+    setSaledQtd(saledQtd - 1);
+    saled.qtd--;
+    setCurrentSale([...currentSale]);
+  }
+  useEffect(() => {
+    if (saledQtd === 0) {
+      removeProd();
+    }
+  }, [saledQtd]);
+
   function removeProd() {
-    saled.qtd = 0;
     setCurrentSale(currentSale.filter((prod) => prod !== saled));
   }
 
@@ -19,7 +39,10 @@ function CartSaled({ props, saled }) {
       </div>
       <div className="removeAndQtd">
         <RemoveButtonProd onClick={removeProd}>Remover</RemoveButtonProd>
-        <p>Qtd: {saled.qtd}</p>
+        <p>
+          Qtd: <button onClick={subQtd}>-</button> {saledQtd}{" "}
+          <button onClick={addQtd}>+</button>
+        </p>
       </div>
     </StyledCartSaled>
   );

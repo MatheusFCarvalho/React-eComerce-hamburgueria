@@ -2,11 +2,10 @@ import { ThemeButton } from "../../style/global.js";
 import { StyledCard } from "./style.js";
 function Card({ product, currentSale, setCurrentSale }) {
   function addProdCart() {
-    !product.qtd ? (product.qtd = 1) : product.qtd++;
-    if (currentSale.includes(product)) {
-      setCurrentSale([...currentSale]);
-    } else {
+    if (!currentSale.includes(product)) {
       setCurrentSale([...currentSale, product]);
+    } else {
+      alert("Produto ja foi adicionao ao carrinho");
     }
   }
 

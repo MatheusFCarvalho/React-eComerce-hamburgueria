@@ -3,6 +3,7 @@ import { StyledTotalValue } from "../style";
 
 function TotalValue({ props }) {
   const { currentSale, setCurrentSale } = props;
+  
 
   let totalValue = currentSale
     .reduce((cumulador, atual) => cumulador + atual.price * atual.qtd, 0)
